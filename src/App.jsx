@@ -40,23 +40,8 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/register"
-            element={
-              <RestrictedRoute>
-                <RegistrationPage />
-              </RestrictedRoute>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <RestrictedRoute>
-                <LoginPage />
-              </RestrictedRoute>
-            }
-          />
-         
+          <Route path="/register" element={<RestrictedRoute><RegistrationPage /></RestrictedRoute>}/>
+          <Route path="/login" element={<RestrictedRoute><LoginPage /></RestrictedRoute>}/>
           <Route path="/contacts" element={<PrivateRoute><ContactsPage /></PrivateRoute>} />
           <Route path="/mailbox" element={<PrivateRoute><MailBoxPage /> </PrivateRoute>} />
           <Route path="/products" element={<PrivateRoute><ProductsPage /></PrivateRoute>} />
