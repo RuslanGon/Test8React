@@ -1,10 +1,11 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { apiGetContacts, apiRemoveContact } from "../../redux/contacts/contactsSlice"
-import { selecPhoneBookContacts, selecPhoneBookIsError, selecPhoneBookIsLoading } from "../../redux/contacts/selector"
-import Loader from "../../component/Loader/Loader"
-import ErrorMessage from "../../component/ErrorMessage/ErrorMessage"
+import { selecPhoneBookContacts } from "../../redux/contacts/selector"
+// import Loader from "../../component/Loader/Loader"
+// import ErrorMessage from "../../component/ErrorMessage/ErrorMessage"
 import NewContact from "../../component/NewContact/NewContact"
+import css from './ContactsPage.module.css'
 
 
 const ContactsPage = () => {
@@ -29,7 +30,7 @@ dispath(apiRemoveContact(contactId))
       <ul>
         {Array.isArray(contacts) && contacts.length === 0 && <li>You dont have any contacts</li>}
       {Array.isArray(contacts) && contacts.map(item =><li key={item.id}>
-        <h3>name: {item.name}<button type="button" onClick={()=>onDeleteContact(item.id)}>delete contact</button></h3>
+        <h3>name: {item.name}<button className={css.del} type="button" onClick={()=>onDeleteContact(item.id)}>delete contact</button></h3>
         <p>number: {item.number}</p>
       </li> )}
       </ul>
