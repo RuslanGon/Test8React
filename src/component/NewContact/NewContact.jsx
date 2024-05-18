@@ -43,8 +43,8 @@ const NewContact = () => {
           <label>
             <span>number</span>
             <br />
-            <Field type="text" name="number" required />
-            <ErrorMessage component="p" name="number" />
+            <Field type="text" name="number" placeholder='number' required />
+            <ErrorMessage component="p" name="number"  />
           </label>
           <br />
           <button type="submit"> ▶ Add new user</button>
